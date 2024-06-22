@@ -5,12 +5,6 @@ public class PSBB
 {
     public static string MiniBus(int count, string[] membersTotal){
         
-        // Validating input length
-        if (membersTotal.Length != count) {
-            Console.WriteLine("Input must be equal with count of family");
-            return count;
-        }
-
         // Parsing the string in List membersTotal to int
         int[] members = new int[count];
 
@@ -18,18 +12,23 @@ public class PSBB
             members[i] = int.Parse(membersTotal[i]);
         }
 
-        // Totalling Mini Bus needed
-        int busess = 0;
+        // Sorting the family member
+        Array.Sort(members);
 
-        foreach (int person in members) {
-            if (person > 4) {
-                busess += (person / 4);
-            } else {
-                busess += 1;
-            }
+        int busNeeded = 0;
+        int x = 0;
+        int y = members.Length - 1;
+
+        // Group the family
+        while (x <= y) {
+            if (members[x] + members[y] <= 4) {
+                x += 1;
+            } 
+            y -= 1;
+
+            busNeeded += 1;
         }
 
-        Console.Write("Minimum bus required is: ");
-        return busess;
+        return $"Minimum bus required is : {busNeeded}";
     }
 }
