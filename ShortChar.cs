@@ -75,17 +75,17 @@ public class ShortChar
 		return new string(consonant.ToArray());
 	}
 	
-	public static void Main(string[] args)
-	{
-		Console.Write("Input one line of words (S) : ");
-		string input = Console.ReadLine();
+	// public static void Main(string[] args)
+	// {
+	// 	Console.Write("Input one line of words (S) : ");
+	// 	string input = Console.ReadLine();
 		
-		string charVowel = procVowel(input.ToLower());
-		string charConsonant = procConsonant(input.ToLower());
+	// 	string charVowel = procVowel(input.ToLower());
+	// 	string charConsonant = procConsonant(input.ToLower());
 			
-		Console.WriteLine("Vowel Characters : ");
-		Console.WriteLine(charVowel);
-		Console.WriteLine("Consonant Characters : ");
-		Console.WriteLine(charConsonant);
-	}
+	// 	Console.WriteLine("Vowel Characters : ");
+	// 	Console.WriteLine(charVowel);
+	// 	Console.WriteLine("Consonant Characters : ");
+	// 	Console.WriteLine(charConsonant);
+	// }
 }
