@@ -1,16 +1,49 @@
+# Table of Contents
+
+1. [Sort Character & PSBB](#sort-character--psbb)
+2. [Usage](#usage)
+3. [Sort Character (NDL010)](#sort-character-ndl010)
+   - [Task](#task)
+   - [Input](#input)
+   - [Output](#output)
+   - [Example](#example)
+   - [Solution](#solution)
+     - [Approach](#approach)
+     - [Program.cs](#programcs)
+     - [ShortChar.cs](#shortcharcs)
+4. [PSBB (Pembatasan Sosial Berskala Besar) (NDL011)](#psbb-pembatasan-sosial-berskala-besar-ndl011)
+   - [Task](#task-1)
+   - [Input](#input-1)
+   - [Output](#output-1)
+   - [Example](#example-1)
+   - [Solution](#solution-1)
+     - [Approach](#approach-1)
+     - [Program.cs](#programcs-1)
+     - [PSBB.cs](#psbbcs)
+
 
 # Sort Character & PSBB 
-This program built using C# and using dotnet 8. So it recomended to use dotnet 8 framework and using dotnet build and dotnet run to run it.
-The Main Class is Program.CS and the others is in Class folder/package.
+This program is built using C# and utilizes .NET 8. 
+It is recommended to use the .NET 8 framework and the commands `dotnet build` and `dotnet run` to compile and run the project. 
+The main class is `Program.cs`, and the additional classes are in the `Class` folder/package.
+
+
+## Usage
+```csharp
+dotnet build
+
+dotnet run
+```
 
 ## Sort Character (NDL010)
-Task : Find the vowel and consonant in words that inputted by user, after that sort the vowel and consonant based on the first appearance.
+### Task
+Find the vowel and consonant in words that inputted by user, after that sort the vowel and consonant based on the first appearance.
 
-**Input** :
+### **Input** :
 
     - One line of words (S). 
  
-**Output** :  
+### **Output** :  
 
     - Contains vowel and consonant characters that has been sorted according to the following rules. 
     - Sort the letters according to the order they came out 
@@ -24,13 +57,15 @@ Task : Find the vowel and consonant in words that inputted by user, after that s
 
 ### Solution
 
-Approach :
+### Approach :
 
-1.  Creating 2 methods to find the vowels and consonant specifically, In Program.cs the input will be passed as parameter
-    to the 2 methods earlier.
-2.  The methods will be in ShortChar.cs in package Class.
+1. **Input Handling**: Read the input string and convert it to lowercase to ensure uniformity.
+2. **Vowel Processing**: Extract vowels from the input string and sort them based on their first appearance.
+3. **Consonant Processing**: Extract consonants from the input string and sort them based on their first appearance.
+4. **Output**: Display the sorted vowels and consonants.
 
-**Program.CS**:
+
+### **Program.CS**:
 ```csharp
         //////////////////////////////////////////////////////////////////////////////
         /////////////////////// TASK 1 : Sort Character //////////////////////////////
@@ -53,7 +88,7 @@ Approach :
         Console.WriteLine("\n");
 ```
 
-**ShortChar.cs**
+### **ShortChar.cs**
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -135,8 +170,21 @@ public class ShortChar
 
 ```
 
+
+1. **Vowel Processing**
+    - Iterating through each character in the input string.
+    - It will check if the character is a vowel and not a whitespace.
+    - After that adding the vowel to a list and track its first occurrence using a dictionary.
+    - And sorting the vowel list based on their first occurrence using the dictionary.
+2. **Consonant Processing**
+    - Similar to vowel processing, it will iterating through each character.
+    - Checking if the character is a consonant and not a whitespace.
+    - Add the consonant to a list and track its first occurrence using a dictionary.
+    - Sorting the consonant list based on their first occurrence using the dictionary.
+
+
 ## PSBB ( Pembatasan Sosial Berskala Besar ) (NDL011)
-Task :
+### Task :
 Galih and Ratna married during the COVID 19 period and only invited the families of both
 partners. they rented a number of minibuses to pick up all of their families to go to the wedding.
 
@@ -146,12 +194,12 @@ of the virus. Each mini bus can only carry at most 4 passengers.
 What a minimum number of buses will they need to rent if all members of each family should
 ride in the same Busses. (one bus can't take more than two family)
 
-**Input** :
+### **Input** :
 
     - The first line contains integer n — the number of families.
     - The second line contains a sequence of integers. The integers are separated by a space, each integer is the number of members in the family.
 
-**Output** :
+### **Output** :
 
     - Print the single number — the minimum number of buses necessary to drive all family to the Wedding.
     - Print “Input must be equal with count of family” if input number of family is not equal with count of family.
@@ -170,7 +218,7 @@ Approach to find the solution :
 3. Sort the families by the number of members.
 4. Pair families to fit into as few buses as possible. 
 
-**Program.cs**:
+### **Program.cs**:
 ```csharp
 using System;
 
@@ -203,7 +251,7 @@ using System;
 
 ```
 
-**PSBB.cs**:
+### **PSBB.cs**:
 ```csharp
 using System;
 using System.Collections.Generic;
